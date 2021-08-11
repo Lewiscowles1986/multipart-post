@@ -52,7 +52,7 @@ module Multipart
         # @param value [String]
         # @param headers [Hash] Content-Type is used, if present.
         def build_part(boundary, name, value, headers = {})
-          part = ''
+          part = +''
           part << "--#{boundary}\r\n"
           part << "Content-ID: #{headers["Content-ID"]}\r\n" if headers["Content-ID"]
           part << "Content-Disposition: form-data; name=\"#{name.to_s}\"\r\n"
